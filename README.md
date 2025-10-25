@@ -130,6 +130,7 @@ This change allows you to access ArgoCD using the NodePort mode, facilitating ex
 
 <img width="1063" height="344" alt="Screenshot 2025-10-25 at 5 17 22 PM" src="https://github.com/user-attachments/assets/7335c7ae-858f-46aa-bfca-d609e4606846" />
 ### To access the ArgoCD application in NodePort mode:
+
 1. Identify the hub-spoke instance created when the cluster was set up.
 2. Obtain the public IP address of the hub-spoke instance.
 3. Use the public IP address along with the NodePort specified in the argocd-server service to access ArgoCD.
