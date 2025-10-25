@@ -117,7 +117,9 @@ Now all of our pod and services are running let’s verify using:
 ```bash
   kubectl get svc -n argocd
 ```
+
 <img width="1057" height="356" alt="Screenshot 2025-10-25 at 5 15 37 PM" src="https://github.com/user-attachments/assets/33dc7d8e-8d0a-4e52-b8c1-498503241b4b" />
+
   - This command lists all the running services in the ArgoCD namespace
   - For this project, we’ll use NodePort mode to access the application. To enable this, make a simple adjustment to the argocd-server service
   - Edit the argocd-server service file.
