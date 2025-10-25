@@ -197,6 +197,7 @@ argocd login <cluster-ip>:<port>
 argocd cluster add <cluster-name> --server=<cluster-ip>:<port>
 ```
 <img width="1131" height="516" alt="Screenshot 2025-10-25 at 6 37 23 PM" src="https://github.com/user-attachments/assets/17d781e9-85bc-47c5-87fb-ea6b4b35c5cf" />
+
  - Replace <cluster-name> with a desired name for the cluster
  - Replace <cluster-ip> and <port> with the IP address and NodePort of your cluster.
 
