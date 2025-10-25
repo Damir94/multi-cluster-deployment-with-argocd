@@ -176,9 +176,9 @@ echo <encoded-password> | base64 --decode
 
 After gaining access to the ArgoCD user interface, you’ll notice the default cluster listed under Settings → Clusters.
 
-To add additional clusters, use the ArgoCD command-line interface (CLI). Follow the documentation at :
-https://argo-cd.readthedocs.io/en/stable/cli_installation/ for instructions on installing the ArgoCD CLI.
-The documentation provides comprehensive information on the installation process.
+To add additional clusters, use the ArgoCD command-line interface (CLI). 
+ - Follow the documentation at: https://argo-cd.readthedocs.io/en/stable/cli_installation/ for instructions on installing the ArgoCD CLI.
+ - The documentation provides comprehensive information on the installation process.
 
 ### To access ArgoCD through the command line:
 - Authenticate using the following command:
