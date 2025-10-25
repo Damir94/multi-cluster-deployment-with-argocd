@@ -137,7 +137,6 @@ This change allows you to access ArgoCD using the NodePort mode, facilitating ex
 1. Identify the hub-spoke instance created when the cluster was set up.
 2. Obtain the public IP address of the hub-spoke instance.
 3. Use the public IP address along with the NodePort specified in the argocd-server service to access ArgoCD.
-4. Example: http://<public-ip>:<NodePort>
 
 ### Additionally, for external access through HTTP and the internet:
   - Modify the security group associated with the hub-spoke instance.
