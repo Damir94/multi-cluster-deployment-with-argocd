@@ -129,6 +129,7 @@ Now all of our pod and services are running let’s verify using:
 This change allows you to access ArgoCD using the NodePort mode, facilitating external access to the application. Adjust the service type and save the file accordingly.
 
 <img width="1063" height="344" alt="Screenshot 2025-10-25 at 5 17 22 PM" src="https://github.com/user-attachments/assets/7335c7ae-858f-46aa-bfca-d609e4606846" />
+
 ### To access the ArgoCD application in NodePort mode:
 
 1. Identify the hub-spoke instance created when the cluster was set up.
@@ -197,3 +198,17 @@ argocd cluster add <cluster-name> --server=<cluster-ip>:<port>
 
 <img width="1689" height="463" alt="Screenshot 2025-10-25 at 5 32 35 PM" src="https://github.com/user-attachments/assets/75a41c42-6935-48bc-99ab-d68fc5fd3111" />
 
+### To deploy an application with ArgoCD:
+ - Create a new app in the ArgoCD UI.
+ - Provide the necessary information for your GitHub repository.
+ - ArgoCD will deploy the application to the specified Kubernetes cluster
+ - This process simplifies deploying applications by utilizing the ArgoCD UI and connecting to your GitHub repository for seamless integration with your Kubernetes cluster.
+
+<img width="794" height="642" alt="Screenshot 2025-10-25 at 5 33 36 PM" src="https://github.com/user-attachments/assets/f1e84aa9-c0ee-48b4-bf65-2f684d400827" />
+
+
+When you click on Create app:
+Application Name: guestbook
+Project name: default
+for the GitHub Repository you can use my repository for this:
+fetch the code from github by git clone
