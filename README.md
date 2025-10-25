@@ -206,6 +206,8 @@ argocd cluster add <cluster-name> --server=<cluster-ip>:<port>
 
 <img width="794" height="642" alt="Screenshot 2025-10-25 at 5 33 36 PM" src="https://github.com/user-attachments/assets/f1e84aa9-c0ee-48b4-bf65-2f684d400827" />
 
+<img width="1485" height="718" alt="Screenshot 2025-10-25 at 5 35 41 PM" src="https://github.com/user-attachments/assets/76963b51-b846-4cd8-8d7d-32e4f574237b" />
+
 
 When you click on Create app:
 Application Name: guestbook
