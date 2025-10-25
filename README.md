@@ -208,9 +208,47 @@ argocd cluster add <cluster-name> --server=<cluster-ip>:<port>
 
 <img width="1485" height="718" alt="Screenshot 2025-10-25 at 5 35 41 PM" src="https://github.com/user-attachments/assets/76963b51-b846-4cd8-8d7d-32e4f574237b" />
 
+ - When you click on Create app:
+ - Application Name: guestbook
+ - Project name: default
+ - For the GitHub Repository you can use my repository for this.
+```bash
+ git clone https://github.com/Damir94/multi-cluster-deployment-with-argocd.git
+```
+For the Path: choose the path of the deployment files in our case its: manifests
 
-When you click on Create app:
-Application Name: guestbook
-Project name: default
-for the GitHub Repository you can use my repository for this:
-fetch the code from github by git clone
+#### Using the same way we are going to add all the three clusters to the application:
+ - Follow the same step click on create application
+ - Application Name: guestbook-2
+ - Project name: default
+ - Cluster: for the cluster we are going to choose the different cluster than the previous one
+ - Namespace: for all the three application we are going to create on default namespace so you can choose the same if you want to.
+
+#### Here is the Image of our all three clusters are running the application:
+
+<img width="1851" height="581" alt="Screenshot 2025-10-25 at 5 39 08 PM" src="https://github.com/user-attachments/assets/ba92681e-a30f-40ce-a832-786a672e5d2b" />
+
+ - Automatic Updates:
+ - Changes made in the Git repository trigger automatic updates for the application.
+ - Example Scenario:
+ - Let’s make changes to the configmap.yaml file in the repository.
+ - Continuous Monitoring:
+ - ArgoCD consistently monitors the Git repository for any modifications.
+ - Synchronized Deployments:
+ - The application across all clusters managed by ArgoCD synchronizes with the updated configuration.
+ - Efficiency and Consistency:
+ - This streamlined process ensures real-time updates, promoting efficiency and consistency in Kubernetes deployments.
+ - ArgoCD’s Advantage:
+ - The beauty of ArgoCD lies in its ability to effortlessly manage and propagate changes across clusters, offering a seamless and automated experience.
+
+<img width="1852" height="706" alt="Screenshot 2025-10-25 at 5 39 26 PM" src="https://github.com/user-attachments/assets/3bdc030a-f351-41bc-bdb1-eb655bc39769" />
+
+Here’s the implementation of our project. Explore the dashboard to gain insights into the cluster and application through ArgoCD. Experiment by making changes directly to the manifest files and observe how ArgoCD responds. Remember, changes made directly to config files won’t apply since ArgoCD strictly relies on the Git repository.
+
+Once you’ve completed the project, ensure to delete the cluster and its resources to avoid unnecessary AWS charges. Execute the following command to completely destroy the cluster:
+```bash
+eksctl delete cluster --name hub-cluster --region us-east-1
+eksctl delete cluster --name spoke-cluster-1 --region us-east-1
+eksctl delete cluster --name spoke-cluster-2 --region us-east-1
+```
+
