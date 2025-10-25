@@ -157,9 +157,42 @@ Retrieve the initial admin password stored in a secret file:
 ```bash
 kubectl edit secret argocd-initial-admin-secret -n argocd
 ```
-
-Locate the password within the file and copy it.
-Decode the password using the following command:
+<img width="1284" height="420" alt="Screenshot 2025-10-25 at 6 31 28 PM" src="https://github.com/user-attachments/assets/47049f28-86be-447b-90df-f8147c2ec12c" />
+ - Locate the password within the file and copy it.
+ - Decode the password using the following command:
+```bash
 echo <encoded-password> | base64 --decode
-Replace <encoded-password> with the copied password.
-Copy the decoded password and paste it into the password field on the ArgoCD user interface.
+```
+- Replace <encoded-password> with the copied password.
+- Copy the decoded password and paste it into the password field on the ArgoCD user interface.
+
+<img width="373" height="396" alt="Screenshot 2025-10-25 at 5 21 29 PM" src="https://github.com/user-attachments/assets/0607c3be-1977-4f0e-b1f9-f3ad4052c106" />
+
+After gaining access to the ArgoCD user interface, you’ll notice the default cluster listed under Settings → Clusters.
+
+To add additional clusters, use the ArgoCD command-line interface (CLI). Follow the documentation at :
+https://argo-cd.readthedocs.io/en/stable/cli_installation/ for instructions on installing the ArgoCD CLI.
+The documentation provides comprehensive information on the installation process.
+
+### To access ArgoCD through the command line:
+- Authenticate using the following command:
+```bash
+argocd login <cluster-ip>:<port>
+```
+<img width="1060" height="165" alt="Screenshot 2025-10-25 at 5 24 17 PM" src="https://github.com/user-attachments/assets/2ea7bbf1-5e40-4b3a-aa4a-252107348f1c" />
+
+
+ - You’ll be prompted for an ID and password.
+ - Use ‘admin’ for the ID.
+ - Use the password obtained previously from kubectl secrets.
+
+### Add a cluster using the ArgoCD CLI:
+```bash
+argocd cluster add <cluster-name> --server=<cluster-ip>:<port>
+```
+<img width="1131" height="516" alt="Screenshot 2025-10-25 at 6 37 23 PM" src="https://github.com/user-attachments/assets/17d781e9-85bc-47c5-87fb-ea6b4b35c5cf" />
+ - Replace <cluster-name> with a desired name for the cluster
+ - Replace <cluster-ip> and <port> with the IP address and NodePort of your cluster.
+
+<img width="1689" height="463" alt="Screenshot 2025-10-25 at 5 32 35 PM" src="https://github.com/user-attachments/assets/75a41c42-6935-48bc-99ab-d68fc5fd3111" />
+
