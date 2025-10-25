@@ -161,11 +161,14 @@ Retrieve the initial admin password stored in a secret file:
 kubectl edit secret argocd-initial-admin-secret -n argocd
 ```
 <img width="1284" height="420" alt="Screenshot 2025-10-25 at 6 31 28 PM" src="https://github.com/user-attachments/assets/47049f28-86be-447b-90df-f8147c2ec12c" />
+
  - Locate the password within the file and copy it.
  - Decode the password using the following command:
+  
 ```bash
 echo <encoded-password> | base64 --decode
 ```
+
 - Replace <encoded-password> with the copied password.
 - Copy the decoded password and paste it into the password field on the ArgoCD user interface.
 
